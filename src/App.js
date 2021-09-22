@@ -4,13 +4,16 @@ import TodoList from './TodoList';
 
 
 function App() {
-  const [newTodo, setNewTodo] = React.useState("");
+  const [todoList, setTodoList] = React.useState([])
+  
+  const addTodo = newTodo => {
+    setTodoList([...todoList, newTodo] )
+  }
   return (
     <div>
       <h1> Todo List</h1>
-      <AddTodoList onAddTodo={setNewTodo} />
-      <p>Successfully Added: {newTodo}</p>
-      <TodoList />
+      <AddTodoList onAddTodo={ addTodo } />
+      <TodoList todoList = { todoList }/>
       
     </div>
   );
