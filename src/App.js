@@ -1,5 +1,5 @@
 import React from 'react';
-import AddTodoList from './AddTodoList';
+import AddTodoList from './AddTodoForm';
 import TodoList from './TodoList';
 
 function useSemiPresistentState () {
@@ -16,16 +16,24 @@ function useSemiPresistentState () {
   return [todoList, setTodoList]
 }
 
+
+
 function App() {
   const [todoList, setTodoList] = useSemiPresistentState()
   const addTodo = newTodo => {
     setTodoList([...todoList, newTodo] )
   }
+  
+  const removeTodo = (id) => {
+    const newTodoList = todoList.filter((todo)=> todo.id !== id)
+    setTodoList(newTodoList)
+  }
+
   return (
     <div>
       <h1> Todo List</h1>
       <AddTodoList onAddTodo={ addTodo } />
-      <TodoList todoList = { todoList }/>
+      <TodoList todoList = { todoList } onRemoveTodo = {removeTodo}/>
       
     </div>
   );
