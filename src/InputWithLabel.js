@@ -5,6 +5,7 @@ const InputWithLabel = ( { todoTitle, handleTitleChange, children}) => {
 
     React.useEffect(() => {
         inputRef.current.focus();
+      
     });
 
     return(
