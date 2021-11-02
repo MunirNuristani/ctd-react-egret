@@ -1,8 +1,8 @@
-import React, {useSate} from 'react';
+import React, {useState} from 'react';
 import InputWithLabel from './InputWithLabel';
 
 function AddTodoList(props) {
-    const [todoTitle, setTodoTitle] = React.useState("")
+    const [todoTitle, setTodoTitle] = useState("")
 
     const handleTitleChange = (event) => {
         event.preventDefault();        
@@ -12,7 +12,7 @@ function AddTodoList(props) {
 
     const handleAddTodo=(event)=>{
         event.preventDefault();
-        props.onAddTodo( {title:todoTitle, id:Date.now()})
+        props.onAddTodo( {fields: {Title:todoTitle, id:Date.now()}})
         setTodoTitle("")
       
     }
