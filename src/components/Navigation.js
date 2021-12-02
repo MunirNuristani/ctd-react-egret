@@ -36,9 +36,7 @@ const Navigation = () => {
                                     <div>
                                         <span> {item.title} </span>
                                         <div className='sub-nav-text'>
-                                            <FetchGet title={item.title} />
-                                            Tasks Pending
-                                        </div>
+                                            <FetchGet title={item.title} /> Tasks Pending </div>
                                     </div>
                                 </Link>
                             </ li>

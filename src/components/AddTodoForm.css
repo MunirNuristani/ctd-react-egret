@@ -1,0 +1,101 @@
+.addTodo {
+  margin: auto;
+  width: 60vw;
+  padding: 20px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-areas:
+    "mainLabel input input input input input button"
+    "label1 input1 input1 label2  input2 input2 button";
+}
+.addTodo > .mainLabel {
+  font-size: 1.5rem;
+  color: #0b132b;
+  grid-area: mainLabel;
+}
+.addTodo > Input {
+  width: 50vw;
+  height: 30px;
+  margin: 0 10px;
+  padding-left: 10px;
+  background: rgba(200, 200, 200, 0.3);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px #808080;
+  grid-area: input;
+}
+.label1 {
+  grid-area: label1;
+  font-size: 14px;
+  margin-top: 10px;
+}
+.label2 {
+  grid-area: label2;
+  font-size: 14px;
+  padding-left: 14px;
+  margin-top: 10px;
+}
+.priority {
+  grid-area: input1;
+  height: 30px;
+  font-size: 14px;
+  width: 23vw !important;
+  padding-left: 4px;
+  margin-top: 3px;  
+}
+
+.dueDate {
+  grid-area: input2;
+  height: 38px;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-left: 5px;
+  align-items: center;
+  background-color: hsl(0, 0%, 100%);
+  border-color: hsl(0, 0%, 80%);
+  border-radius: 4px;
+  border-width: 1px;
+  padding-left: 4px;
+  width: 23vw !important;
+  box-sizing: border-box;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+.addTodo > button {
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #d3d5d4;
+  background-color: #994636;
+  border-radius: 5px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: button;
+}
+
+.addTodo > button:hover {
+  background-color: #d3d5d4;
+  color: #994636;
+}
+
+@media screen and (max-width: 480px) {
+  .addTodo {
+    flex-direction: column;
+    padding: 5px;
+  }
+  .addTodo > label,
+  .addTodo > input,
+  .addTodo > button {
+    margin-bottom: 15px;
+  }
+  .addTodo > input {
+    width: 90vw;
+    height: 40px;
+  }
+}

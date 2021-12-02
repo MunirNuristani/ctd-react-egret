@@ -1,0 +1,81 @@
+.ListItem {
+  color: #0b132b;
+  align-items: center;
+  padding: 5px 0 5px;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  box-shadow: 2px 2px 15px #808080;
+  background: rgba(200, 200, 200, 0.2);
+  text-align: left;
+  display: Grid;
+  grid-template-areas:
+    " task task task task  button"
+    " text1 priority text2 date button";
+}
+.mainBlock {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 4px;
+  grid-area: task
+}
+
+.ListItem > div > p {
+  padding-left: 10px;
+}
+.mainBlock > div > p.complete {
+  text-decoration: line-through;
+}
+.ListItem > div > input {
+  margin: auto 5px;
+}
+.ListItem> button {
+  width: 50px;
+  height: 35px;
+  border-radius: 5px;
+  background-color: #994636;
+  color: #d3d5d4;
+  justify-self: end;
+  margin-right: 10px;
+  font-size: 1.8rem;
+  transition: 500ms;
+  border: none;
+  grid-area: button;
+}
+
+.ListItem > button:hover {
+  color: #994636;
+  background-color: #d3d5d4;
+  transition: 350ms;
+}
+#priority-text,
+#dueDate-text {
+  font-size: 12px;
+  display: inline-flex;
+  margin-left: 5px;
+}
+#priority,
+#dueDate {
+  margin-left: 5px;
+}
+#dueDate-text {
+    grid-area: text2;
+}
+#priority-text {
+    padding-left: 32px;
+    grid-area: text1;
+}
+#priority {
+    grid-area: priority;
+}
+
+#dueDate {
+    grid-area: date;
+}
+@media screen and (max-width: 480px) {
+  .ListItem {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    text-align: left;
+  }
+}
