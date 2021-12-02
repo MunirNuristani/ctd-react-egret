@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import InputWithLabel from './InputWithLabel';
+import style from './AddTodoForm.module.css'
+import { MdAddCircle } from 'react-icons/md'
 
 function AddTodoList(props) {
     const [todoTitle, setTodoTitle] = useState("")
@@ -12,19 +14,19 @@ function AddTodoList(props) {
 
     const handleAddTodo=(event)=>{
         event.preventDefault();
-        props.onAddTodo( {fields: {Title:todoTitle, id:Date.now()}})
+        props.onAddTodo( todoTitle)
         setTodoTitle("")
       
     }
     return (
-        <form onSubmit={handleAddTodo}> 
+        <form className={style.addTodo} onSubmit={handleAddTodo}> 
             <InputWithLabel  
                 todoTitle={todoTitle} 
                 handleTitleChange={handleTitleChange}
             >
-                Title:
+                Todo:
             </InputWithLabel>
-            <button > Add </button>
+            <button > <MdAddCircle /> </button>
         </form>
     )
 }

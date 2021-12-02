@@ -1,0 +1,55 @@
+.ListItem {
+    display: flex;
+    color: #0b132b;
+    justify-content:space-between;
+    align-items: center;
+    padding: 5px 0 5px;
+    border: none ;
+    border-radius: 4px;
+    margin-bottom:5px;
+    box-shadow: 2px 2px 15px #808080;
+    background: rgba(200, 200, 200, 0.2);
+    
+}
+.ListItem>div {
+    display: flex;
+    flex-direction: row;
+    padding-left: 4px;
+    
+}
+
+.ListItem>div>p {
+    padding-left: 10px;
+    
+}
+.ListItem>div>p.complete{
+    text-decoration:line-through
+}
+.ListItem>div>input {
+    margin: auto;
+    
+}
+.ListItem>button {
+    width: 50px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #994636;
+    color: #d3d5d4;
+    margin: auto 5px;
+    font-size: 1.8rem;
+    transition: 500ms;
+    border: none;
+}
+
+.ListItem>button:hover {
+    color:#994636;
+    background-color: #d3d5d4;
+    transition: 350ms;
+}
+@media screen and (max-width: 480px){
+    .ListItem {
+        margin-bottom:15px;
+        font-size: 1.1rem;
+        text-align: left;
+    }
+}

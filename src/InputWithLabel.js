@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const InputWithLabel = ( { todoTitle, handleTitleChange, children}) => {
     const inputRef = React.useRef()
 
@@ -11,14 +12,19 @@ const InputWithLabel = ( { todoTitle, handleTitleChange, children}) => {
     return(
     <>
         <label htmlFor="todoTitle"> {children} </label>
+        
             <input
                 ref={ inputRef }
                 autoFocus
+                required
                 type="text" 
                 id="todoTitle" 
                 name="title"
                 value = { todoTitle} 
-                onChange = {handleTitleChange}>    
+                onChange = {handleTitleChange}
+                placeholder = "&#xF03A; Enter Task Here!" 
+                style={{fontFamily:'FontAwesome, Open Sans', fontSize:'1.2rem'}} 
+                >
             </input>
     </>        
     )
