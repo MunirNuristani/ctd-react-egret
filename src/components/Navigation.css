@@ -2,7 +2,7 @@
     background-color: #3d5f7f;
     height: 90px;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
 }
 .menu-bars {

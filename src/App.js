@@ -1,22 +1,19 @@
-
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Navigation from "./Navigation";
-import TodoContainer from "./TodoContainer";
-import  './App.css'
+import Navigation from "./components/Navigation";
+import TodoContainer from "./components/TodoContainer";
+import "./App.css";
 
 function App() {
-  
   return (
     <Router>
-      
       <Navigation />
       <Switch>
-        <Route exact path="/work">
+        <Route path="/work">
           <TodoContainer tableName="Work" />
         </Route>
         <Route exact path="/personal">
           <TodoContainer tableName="Personal" />
-        </Route> 
+        </Route>
         <Route exact path="/gaming">
           <TodoContainer tableName="Gaming" />
         </Route>

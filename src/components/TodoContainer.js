@@ -2,7 +2,7 @@ import  {useState, useEffect } from 'react';
 import AddTodoForm from './AddTodoForm';
 import TodoList from './TodoList';
 import { Hypnosis }  from "react-cssfx-loading"
-
+import PropTypes from 'prop-types'
 
 function TodoContainer({ tableName }) {
   const [todoList, setTodoList] = useState([]);
@@ -19,13 +19,12 @@ function TodoContainer({ tableName }) {
     )
       .then((resp) => resp.json())
       .then((data) => {
-        console.log(data)
         setTodoList(data.records)
         setIsLoading(false)
       })
   }, [tableName])
   
-  const addTodo = (title) => {
+  const addTodo = (title, priority, date) => {
     fetch(
       `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${encodeURIComponent(tableName)}`,
       {
@@ -39,6 +38,8 @@ function TodoContainer({ tableName }) {
             {
               fields: {
                 Title: title,
+                Priority: priority,
+                Due_Date: date,
               },
             },
           ],
@@ -47,6 +48,7 @@ function TodoContainer({ tableName }) {
     )
       .then((resp) => resp.json())
       .then((data) => {
+        console.log(data.records)
         setTodoList([...todoList, ...data.records])
       })
   }
@@ -75,8 +77,8 @@ function TodoContainer({ tableName }) {
     </>
   );
 }
+TodoContainer.propTypes = {
+  tableName: PropTypes.string.isRequired
+}
 
 export default TodoContainer;
-export {
-  
-}

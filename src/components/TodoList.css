@@ -9,6 +9,7 @@
     background: rgba(200, 200, 200, 0.3);
     height: 60vh ;
 }
+
 @media screen and (max-width: 480px){
     .TodoList{
         width: 90vw;
