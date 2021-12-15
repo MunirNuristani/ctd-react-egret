@@ -14,7 +14,7 @@
   justify-content: space-between;
   margin: 10px, 25px;
   border-bottom: var(--primary-color);
-  color: var(--secondry-color);
+  color: #000;
   font-weight: 900;
 }
 .mainBlock {
@@ -64,6 +64,7 @@
 }
 .todo-container.active {
   padding-left: 250px;
+  overflow: hidden;
   transition: 350ms;
 }
 .loading {
@@ -113,5 +114,11 @@
   }
   .signInForm-email-block, .signInForm-password-block {
     width: auto;
+  }
+  .todo-container.active {
+    padding-left: 0;
+  }
+  .TodoList.active{
+    left: 0;
   }
 }

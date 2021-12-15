@@ -78,15 +78,29 @@
   color: var(--primary-color);
   transition: 400ms;
 }
-
+@media only screen and (max-width:768px){
+  .main-input{
+    flex-wrap: wrap;
+  }
+}
 @media only screen and (max-width: 480px) {
   .main-input{
     width: 100vw;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-
+  .due-date-div.active{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .input-div.activer {
+    justify-content: center;
+  }
   .due-date-label{
     font-size: 16px;
+    margin: 0;
+    padding-left: 15px;
   }
   .main-input-button{
     background-color: none !important;

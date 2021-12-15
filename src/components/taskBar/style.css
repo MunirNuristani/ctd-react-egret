@@ -24,6 +24,9 @@ button {
 	cursor: pointer;
 	outline: inherit;
 }
+.taskbar-sort-button {
+	z-index: 50;
+}
 @media only screen and (max-width: 480px) {
   .taskbar {
 	  position: fixed;
