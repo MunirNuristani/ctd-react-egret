@@ -2,7 +2,7 @@
     background-color: var(--secondry-color);
     text-decoration: none;
     width: 250px;
-    height: 100vh;
+    height: calc(100% - 60px);
     display: flex;
     justify-content: center;
     position: fixed;
@@ -10,7 +10,7 @@
     padding-top: 10px;
     left: -100%;
     transition: 850ms;
-    z-index: 98;
+    z-index: 99;
 }
 .nav-menu.active {
     left: 0;
@@ -38,6 +38,7 @@
 }
 .nav-main {
     display:flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
@@ -74,6 +75,7 @@
 .top-navbar{
     display: flex;
     flex-direction: row;
+   
     height: 60px;
     justify-content: space-between;
     align-items: center;
@@ -155,6 +157,7 @@ span {
     flex-direction: column;
     padding: 20px;
     transition: 1s;
+    z-index: 99;
 }
 .setting-slide.active{
     right: 0;
@@ -213,7 +216,11 @@ span {
     display: none;
     
  }
-
+ @media only screen and (max-width:768px){
+    .nav-menu{
+        height: calc(100% - 60px);
+    }
+}
  @media screen and (max-width: 480px) {
     .top-navbar{
         display: none;
@@ -235,13 +242,13 @@ span {
         font-size: 2rem;
       }
       .nav-menu {
-        background-color: var(--secondry-color);
-        text-decoration: none;
         width: 100vw;
-        display: flex;
-        padding-top: 10px;
-        left: -100%;
-        transition: 850ms;
+        height: calc( 100vh - 60px);
+        overflow: hidden;
+    }
+    .nav-unit{
+        justify-content: center;
+        padding: 10px;
     }
     .setting-slide{
         width: 100%
