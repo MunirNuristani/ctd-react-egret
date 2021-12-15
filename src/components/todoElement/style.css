@@ -1,0 +1,117 @@
+.TodoList {
+  text-align: center;
+  margin: 30px;
+  padding: 15px;
+  
+}
+.TodoList.active {
+  left: 250px;
+}
+.ListItem {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  justify-content: space-between;
+  margin: 10px, 25px;
+  border-bottom: var(--primary-color);
+  color: var(--secondry-color);
+  font-weight: 900;
+}
+.mainBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  padding-left: 4px;
+}
+.item-button {
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+  padding: 0;
+  margin-right: 4px;
+}
+.item-button:hover {
+  background-color: var(--secondry-color);
+  color: var(--primary-color);
+  transition: 400ms;
+}
+.main-text {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+.main-text.complete {
+  text-decoration: line-through;
+  color: #aaa;
+}
+.detail-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.dueDate {
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.todo-container {
+  margin-top: 100px;
+  width: 100%;
+  transition: 850ms;
+  padding-bottom: 5rem;
+}
+.todo-container.active {
+  padding-left: 250px;
+  transition: 350ms;
+}
+.loading {
+  text-align: center;
+  margin: 50px auto;
+  color: #0b123b;
+  width: 80px;
+  height: "80px";
+}
+.dueDate-section{
+  display: flex;
+  flex-direction: row;
+}
+.dueDate-section.complete{
+  text-decoration: line-through;
+}
+
+.ListItem.important{
+  color:#f00 
+}
+.form-control{
+  margin-left: 0;
+}
+.signInForm-email-block, .signInForm-password-block {
+  width: 200%;
+}
+
+@media screen and (max-width: 480px) {
+  .TodoList{
+    padding: 10px;
+    margin: 0;
+
+  }
+
+  .ListItem{
+    display: flex;
+    flex-direction: column;
+    padding: 5px 15px;
+    margin: 0 10px;
+    height: fit-content;
+  }
+  .mainBlock{
+    justify-content: left;
+  }
+  .detail-section{
+    justify-content: right;
+  }
+  .signInForm-email-block, .signInForm-password-block {
+    width: auto;
+  }
+}

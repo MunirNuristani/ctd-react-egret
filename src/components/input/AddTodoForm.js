@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import InputWithLabel from "./InputWithLabel";
-import "./AddTodoForm.css";
-import { MdAddCircle } from "react-icons/md";
+import "./style.css";
 import PropTypes from "prop-types";
 import Moment from "moment";
 
-function AddTodoForm(props) {
+function AddTodoForm({onAddTodo}) {
   const today = Moment(new Date()).format("YYYY/MM/DD");
   const [todoTitle, setTodoTitle] = useState("");
   const [todoDate, setTodoDate] = useState(today);
   const [displayDate, setDisplayDate] = useState();
-  const [todoPriority, setTodoPriority] = useState("");
-  const [displayPriority, setDisplayPriority] = useState("");
+  // eslint-disable-next-line
+  const [form, setForm] = useState('Work')
+
 
   const handleTitleChange = e => {
     e.preventDefault();
@@ -23,40 +23,36 @@ function AddTodoForm(props) {
     const myDate = Moment(date).format("YYYY/MM/DD");
     setTodoDate(myDate);
   };
-  const handlePriorityChange = option => {
-    setTodoPriority(option.value);
-    setDisplayPriority(option);
-  };
-
-  const handleAdd = e => {
-    e.preventDefault();
-    props.onAddTodo(todoTitle, todoPriority, todoDate);
+ 
+  const selectForm = form => {
+    setForm(form)
+  }
+  const handleAdd = event => {
+    event.preventDefault();
+    onAddTodo(todoTitle,  todoDate, form);
     setTodoTitle("");
-    setTodoPriority("");
     setTodoDate(today);
     setDisplayDate();
-    setDisplayPriority(null);
   };
 
   return (
     <form className="addTodo" onSubmit={handleAdd}>
       <InputWithLabel
+        handleAdd={handleAdd}
         todoTitle={todoTitle}
-        todoDate={displayDate}
-        todoPriority={displayPriority}
+        todoDate={displayDate}  
         handleTitleChange={handleTitleChange}
         handleDateChange={handleDateChange}
-        handlePriorityChange={handlePriorityChange}
+        selectForm = {selectForm}
       >
         Todo:
       </InputWithLabel>
-      <button>
-        {" "}<MdAddCircle />{" "}
-      </button>
+      
     </form>
+    
   );
 }
 AddTodoForm.propTypes = {
-  props: PropTypes.func
+  onAddTodo: PropTypes.func.isRequired,
 };
 export default AddTodoForm;

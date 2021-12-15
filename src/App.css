@@ -1,11 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Karla&family=Poppins&family=Raleway&family=Ubuntu&display=swap');
+
 @import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
+    
+   
 }
-body {
-    background: url(./components/bg_pic.jpg) ;
+
+:root{
+    --primary-color:#d3d5d4;
+    --secondry-color:#061626 ;
+    --hover-color: #40798c;
+    --background-color:'';
+    
+}
+@media only screen and (max-width: 480px) {
+
+    *{
+        box-sizing: border-box;
+    }
+    
 }
